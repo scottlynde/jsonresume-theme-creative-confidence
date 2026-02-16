@@ -1,6 +1,6 @@
 {
   "name": "jsonresume-theme-creative-confidence",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Creative Confidence JSON Resume theme",
   "type": "module",
   "main": "./index.js",

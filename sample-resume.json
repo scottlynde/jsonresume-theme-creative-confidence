@@ -1,0 +1,299 @@
+{
+	"$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/schema.json",
+	"basics": {
+		"name": "Justin Time",
+		"label": "Assistant to the Traveling Secretary | Import/Export Visionary",
+		"image": "https://i.ibb.co/XrbZrYGH/sample-profile-photo-3-D-AI-rendering.jpg",
+		"email": "justin.time@example.com",
+		"phone": "+1-555-212-1994",
+		"url": "https://vandelay-vision.example.com",
+		"summary": "Resourceful operations professional with extensive experience navigating high-pressure front-office environments, baseball administration, and startup import/export ventures. Known for creative problem-solving, persuasive communication, and delivering results with limited preparation time.",
+		"location": {
+			"address": "129 W 81st Street, Apt 5A",
+			"postalCode": "10024",
+			"city": "New York",
+			"countryCode": "US",
+			"region": "NY"
+		},
+		"profiles": [
+			{
+				"network": "LinkedIn",
+				"username": "justintime",
+				"url": "https://linkedin.com/in/justintime"
+			},
+			{
+				"network": "GitHub",
+				"username": "artvandelayco",
+				"url": "https://github.com/artvandelayco"
+			}
+		]
+	},
+	"work": [
+		{
+			"name": "New York City Arcade League",
+			"position": "Professional Frogger Competitor",
+			"url": "https://nyc-arcade.example.com",
+			"startDate": "1998-02",
+			"endDate": "1999-01",
+			"summary": "Competed in regional arcade tournaments with a specialization in high-pressure Frogger strategy and score optimization.",
+			"highlights": [
+				"Achieved top-5 finish in three consecutive citywide Frogger invitationals",
+				"Developed repeatable risk-timing techniques for high-traffic crossing patterns",
+				"Mentored new competitors on focus, pacing, and joystick ergonomics"
+			]
+		},
+		{
+			"name": "New York Yankees",
+			"position": "Assistant to the Traveling Secretary",
+			"url": "https://www.mlb.com/yankees",
+			"startDate": "1995-05",
+			"endDate": "1996-09",
+			"summary": "Supported team travel logistics, front-office coordination, and executive communications in a fast-paced professional sports environment.",
+			"highlights": [
+				"Coordinated travel schedules, accommodations, and itineraries for team personnel under tight deadlines",
+				"Prepared briefing materials and handled time-sensitive requests for senior leadership",
+				"Improved office response times by introducing practical tracking checklists"
+			]
+		},
+		{
+			"name": "Play Now, Inc.",
+			"position": "Hand Model",
+			"url": "https://playnow.example.com",
+			"startDate": "1996-10",
+			"endDate": "1997-01",
+			"summary": "Represented product lines in commercial and print campaigns requiring detailed hand-feature presentation.",
+			"highlights": [
+				"Maintained strict grooming and appearance standards for close-up production work",
+				"Collaborated with creative directors and production teams to meet campaign requirements",
+				"Delivered on tight shoot timelines with minimal retakes"
+			]
+		},
+		{
+			"name": "Vandelay Industries",
+			"position": "Co-Founder, Import/Export",
+			"url": "https://vandelay.example.com",
+			"startDate": "1993-01",
+			"endDate": "1995-04",
+			"summary": "Launched and operated a boutique import/export concept focused on market positioning and strategic supplier conversations.",
+			"highlights": [
+				"Developed brand narrative and sales messaging for prospective customers and partners",
+				"Negotiated preliminary supplier terms across domestic and international channels",
+				"Built flexible operating plans adaptable to changing market conditions"
+			]
+		},
+		{
+			"name": "Kruger Industrial Smoothing",
+			"position": "Special Projects Coordinator",
+			"url": "https://kruger.example.com",
+			"startDate": "1999-02",
+			"endDate": "2001-06",
+			"summary": "Handled ad hoc initiatives, executive follow-ups, and cross-department coordination for a lean operations team.",
+			"highlights": [
+				"Created practical project trackers that improved follow-through on recurring requests",
+				"Streamlined meeting preparation by introducing reusable briefing templates",
+				"Supported client-facing visits and maintained smooth on-site logistics"
+			]
+		},
+		{
+			"name": "Monk's Café",
+			"position": "Frequent Patron and Informal Strategy Consultant",
+			"url": "https://monks.example.com",
+			"startDate": "1992-01",
+			"endDate": "2002-12",
+			"summary": "Advised peers on life logistics, networking opportunities, and spontaneous problem-solving over coffee.",
+			"highlights": [
+				"Facilitated dozens of impromptu planning sessions with actionable next steps",
+				"Built strong neighborhood relationships through consistent face-to-face communication",
+				"Applied creative thinking to unusual everyday challenges"
+			]
+		}
+	],
+	"volunteer": [
+		{
+			"organization": "Monk's Community Outreach",
+			"position": "Event Volunteer",
+			"url": "https://monks.example.org",
+			"startDate": "1994-03",
+			"summary": "Supported neighborhood events and local fundraising activities.",
+			"highlights": [
+				"Organized event seating, guest check-in, and on-site coordination"
+			]
+		}
+	],
+	"education": [
+		{
+			"institution": "Queens College, City University of New York",
+			"url": "https://www.qc.cuny.edu",
+			"area": "History",
+			"studyType": "Bachelor of Arts",
+			"startDate": "1988-09",
+			"endDate": "1992-05",
+			"score": "3.2",
+			"courses": [
+				"American Urban History",
+				"Political Institutions",
+				"Business Communication"
+			]
+		}
+	],
+	"awards": [
+		{
+			"title": "Employee of the Month (Honorable Mention)",
+			"date": "1996-07",
+			"awarder": "New York Yankees Front Office",
+			"summary": "Recognized for reliability and responsiveness during an intensive travel cycle."
+		}
+	],
+	"certificates": [
+		{
+			"name": "Corporate Travel Logistics Fundamentals",
+			"date": "1995-06",
+			"issuer": "Metro Business Institute",
+			"url": "https://metro-business.example.com/certificates/travel-logistics"
+		},
+		{
+			"name": "Advanced Frogger Street-Crossing Analytics",
+			"date": "1998-08",
+			"issuer": "New York City Arcade League",
+			"url": "https://nyc-arcade.example.com/certificates/frogger-analytics"
+		},
+		{
+			"name": "Official Marine Biology Conversation Starter",
+			"date": "1994-11",
+			"issuer": "Metropolitan Community Learning Center",
+			"url": "https://community-learning.example.com/certificates/marine-bio-starter"
+		},
+		{
+			"name": "Workplace Napping Awareness (No Actual Napping)",
+			"date": "2000-03",
+			"issuer": "Office Productivity Forum",
+			"url": "https://office-productivity.example.com/certificates/napping-awareness"
+		},
+		{
+			"name": "High-Confidence Pretzel Procurement",
+			"date": "1997-05",
+			"issuer": "City Snack Logistics Council",
+			"url": "https://snack-logistics.example.com/certificates/pretzel-procurement"
+		}
+	],
+	"publications": [
+		{
+			"name": "The Art of Looking Busy",
+			"publisher": "City Office Review",
+			"releaseDate": "1997-02",
+			"url": "https://cityoffice.example.com/the-art-of-looking-busy",
+			"summary": "A humorous editorial on office optics, timing, and workplace perception."
+		}
+	],
+	"skills": [
+		{
+			"name": "Operations Coordination",
+			"level": "Intermediate",
+			"keywords": [
+				"travel planning",
+				"schedule management",
+				"administrative support",
+				"cross-team communication",
+				"issue escalation",
+				"calendar triage",
+				"last-minute itinerary rescue",
+				"meeting-room diplomacy"
+			]
+		},
+		{
+			"name": "Business Development",
+			"level": "Intermediate",
+			"keywords": [
+				"sales conversations",
+				"vendor outreach",
+				"negotiation",
+				"relationship building",
+				"market positioning",
+				"cold-call confidence",
+				"corridor networking",
+				"creative pitch framing"
+			]
+		},
+		{
+			"name": "Personal Effectiveness",
+			"level": "Advanced",
+			"keywords": [
+				"presentation",
+				"adaptability",
+				"situational problem-solving",
+				"public speaking",
+				"composure under pressure",
+				"strategic waiting",
+				"deadline improvisation",
+				"optimistic reframing"
+			]
+		},
+		{
+			"name": "Arcade Performance",
+			"level": "Advanced",
+			"keywords": [
+				"Frogger pattern recognition",
+				"reaction timing",
+				"score maximization",
+				"focus endurance",
+				"crowd-pressure composure"
+			]
+		},
+		{
+			"name": "Everyday Logistics",
+			"level": "Advanced",
+			"keywords": [
+				"parallel parking optimism",
+				"snack route optimization",
+				"short-notice planning",
+				"friendly negotiation",
+				"urban navigation"
+			]
+		}
+	],
+	"languages": [
+		{
+			"language": "English",
+			"fluency": "Native speaker"
+		}
+	],
+	"interests": [
+		{
+			"name": "Baseball and Sports Culture",
+			"keywords": [
+				"team history",
+				"stadium experiences",
+				"game strategy"
+			]
+		}
+	],
+	"references": [
+		{
+			"name": "Available upon request",
+			"reference": "Professional references can be provided after initial screening."
+		}
+	],
+	"projects": [
+		{
+			"name": "Import/Export Launch Plan",
+			"description": "Developed a practical go-to-market plan for a startup import/export venture with phased partner outreach.",
+			"highlights": [
+				"Defined initial supplier categories and outreach scripts",
+				"Prepared early-stage budget and timeline scenarios"
+			],
+			"keywords": [
+				"small business",
+				"trade operations",
+				"business planning"
+			],
+			"startDate": "1993-04",
+			"endDate": "1994-12",
+			"url": "https://projects.example.com/import-export-launch",
+			"roles": [
+				"Co-Founder"
+			],
+			"entity": "Vandelay Industries",
+			"type": "business"
+		}
+	]
+}

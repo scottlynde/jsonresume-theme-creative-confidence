@@ -1,7 +1,7 @@
 const css = `:root {
   --text: #0f172a;
   --muted: #334155;
-  --line: #94a3b8;
+  --summary-light: #7c8798;
   --heading: #0b1220;
   --header-bg: #0f274d;
   --right-bg: #edf4ff;
@@ -12,7 +12,7 @@ html, body {
   margin: 0;
   padding: 0;
   color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Aptos, "Gill Sans MT", "Gill Sans", Calibri, "Trebuchet MS", sans-serif;
   line-height: 1.22;
   font-size: 10pt;
 }
@@ -56,11 +56,7 @@ html, body {
   background: var(--right-bg);
   color: var(--right-text);
   padding: 8px 8px 6px;
-  border: none;
   line-height: 1.14;
-}
-.right-panel .section {
-  margin-top: 7px;
 }
 .right-panel .section-title {
   color: var(--right-text);
@@ -77,6 +73,11 @@ html, body {
 .right-panel .compact-sub li {
   font-size: 9.15pt;
 }
+.photo,
+.photo-empty {
+  width: 100%;
+  height: 100%;
+}
 .photo-wrap {
   width: 68px;
   height: 68px;
@@ -84,14 +85,10 @@ html, body {
   background: #eff6ff;
 }
 .photo {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
   display: block;
 }
 .photo-empty {
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,7 +102,7 @@ html, body {
 }
 .section-title {
   margin: 0 0 4px;
-  font-size: 15.2pt;
+  font-size: 14.2pt;
   font-weight: 700;
   color: var(--heading);
 }
@@ -116,6 +113,12 @@ html, body {
 }
 .item {
   margin-bottom: 5px;
+}
+.work-item-keep {
+  width: 100%;
+  display: block;
+  margin-bottom: 5px;
+  break-inside: avoid;
   page-break-inside: avoid;
 }
 .item-head {
@@ -132,7 +135,7 @@ html, body {
 .item-org {
   margin: 0.5px 0 0;
   color: var(--muted);
-  font-size: 9.5pt;
+  font-size: 10.5pt;
   font-style: italic;
 }
 .item-dates {
@@ -142,16 +145,26 @@ html, body {
 }
 .item-summary {
   margin: 1px 0 2px;
-  color: #7c8798;
+  color: var(--summary-light);
   font-style: italic;
 }
 .bullets {
-  margin: 2px 0 0 13px;
+  margin: 2px 0 0;
   padding: 0;
+  list-style: none;
 }
 .bullets li {
   margin: 0 0 1px;
   line-height: 1.12;
+  position: relative;
+  padding-left: 12px;
+}
+.bullets li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--muted);
 }
 .contact-list,
 .compact-list {
@@ -199,8 +212,7 @@ html, body {
   margin-bottom: 2px;
   line-height: 1.1;
 }
-.compact-list li::marker,
-.bullets li::marker {
+.compact-list li::marker {
   color: var(--muted);
 }
 .skill-group {
@@ -223,24 +235,92 @@ a {
   color: inherit;
   text-decoration: none;
 }
+.print-footer {
+  display: none;
+}
 @media print {
   @page {
     size: Letter;
-    margin: 0.32in;
+    margin: 0.32in 0.32in 0.22in 0.32in;
+  }
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
   .resume {
     max-width: none;
     margin: 0;
-    padding: 0;
+    padding: 0.03in 0 0.26in;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
-  .layout,
-  .section,
-  .item,
+  .layout {
+    align-items: start;
+  }
+  .layout > div,
+  .right-panel {
+    padding-bottom: 0.28in;
+  }
+  .right-panel {
+    background: transparent;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .right-panel .section {
+    background: var(--right-bg);
+    margin-top: 7px;
+    padding: 6px 8px;
+  }
+  .right-panel .section:first-child {
+    margin-top: 0;
+  }
   .bullets,
   .compact-list,
   .skills-section {
     break-inside: avoid;
     page-break-inside: avoid;
+  }
+  .section-title {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  .work-section .work-item-keep,
+  .work-section .work-item-keep .item,
+  .work-section .work-item-keep .item-head,
+  .work-section .work-item-keep .item-summary,
+  .work-section .work-item-keep .bullets,
+  .work-section .work-item-keep .bullets li {
+    break-inside: avoid-page !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+  }
+  .work-section .work-item-keep {
+    page-break-before: auto;
+    break-before: auto;
+  }
+  .print-footer {
+    display: flex !important;
+    position: fixed;
+    left: 0.32in;
+    right: 0.32in;
+    bottom: 0in;
+    height: 0.22in;
+    padding: 0 0 0.01in;
+    font-size: 7.8pt;
+    line-height: 1.15;
+    color: var(--summary-light);
+    font-style: italic;
+    background: transparent;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 999;
+    pointer-events: none;
   }
 }`;
 
@@ -296,14 +376,27 @@ function profileIcon(profile = {}) {
     return `<span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" role="img" focusable="false"><circle cx="12" cy="12" r="12" fill="#111111"></circle><path d="M12 5.2c-3.85 0-6.97 3.12-6.97 6.97 0 3.08 2 5.7 4.77 6.62.35.06.48-.15.48-.34 0-.17-.01-.73-.01-1.33-1.94.42-2.35-.82-2.35-.82-.32-.8-.78-1.02-.78-1.02-.64-.44.05-.43.05-.43.71.05 1.08.73 1.08.73.63 1.08 1.65.77 2.06.59.06-.46.25-.77.45-.95-1.55-.18-3.18-.78-3.18-3.46 0-.76.27-1.38.72-1.87-.07-.18-.31-.91.07-1.9 0 0 .58-.19 1.92.71a6.7 6.7 0 0 1 3.49 0c1.33-.9 1.92-.71 1.92-.71.38.99.14 1.72.07 1.9.45.49.72 1.11.72 1.87 0 2.68-1.63 3.28-3.19 3.45.26.22.48.65.48 1.3 0 .95-.01 1.71-.01 1.95 0 .19.13.41.49.34A6.98 6.98 0 0 0 18.97 12.17c0-3.85-3.12-6.97-6.97-6.97Z" fill="#ffffff"></path></svg></span>`;
   }
 
-  return "🌐︎ ";
+  return `<span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" role="img" focusable="false"><circle cx="12" cy="12" r="10" fill="none" stroke="#0f172a" stroke-width="1.8"></circle><path d="M2 12h20M12 2a14 14 0 0 1 0 20M12 2a14 14 0 0 0 0 20" fill="none" stroke="#0f172a" stroke-width="1.4"></path></svg></span>`;
+}
+
+function contactIcon(type) {
+  if (type === "phone") {
+    return `<span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" role="img" focusable="false"><path d="M6.6 2.8h3.2c.55 0 1 .45 1 1v2.6c0 .5-.37.92-.86.99l-1.5.2a13.5 13.5 0 0 0 8 8l.2-1.5c.07-.49.49-.86.99-.86h2.6c.55 0 1 .45 1 1v3.2c0 .55-.45 1-1 1A17.8 17.8 0 0 1 5.6 3.8c0-.55.45-1 1-1Z" fill="#0f172a"></path></svg></span>`;
+  }
+  if (type === "mail") {
+    return `<span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" role="img" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2" ry="2" fill="none" stroke="#0f172a" stroke-width="1.8"></rect><path d="M4 7l8 6 8-6" fill="none" stroke="#0f172a" stroke-width="1.8"></path></svg></span>`;
+  }
+  if (type === "location") {
+    return `<span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" role="img" focusable="false"><path d="M12 22s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12Z" fill="none" stroke="#0f172a" stroke-width="1.8"></path><circle cx="12" cy="10" r="2.4" fill="#0f172a"></circle></svg></span>`;
+  }
+  return `<span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" role="img" focusable="false"><circle cx="12" cy="12" r="10" fill="none" stroke="#0f172a" stroke-width="1.8"></circle><path d="M2 12h20M12 2a14 14 0 0 1 0 20M12 2a14 14 0 0 0 0 20" fill="none" stroke="#0f172a" stroke-width="1.4"></path></svg></span>`;
 }
 
 function renderContactSection(basics = {}) {
   const lines = [];
 
-  if (basics.phone) lines.push(`<li>☎︎ ${escapeHtml(basics.phone)}</li>`);
-  if (basics.email) lines.push(`<li>✉︎ <a href="mailto:${escapeHtml(basics.email)}">${escapeHtml(basics.email)}</a></li>`);
+  if (basics.phone) lines.push(`<li>${contactIcon("phone")}${escapeHtml(basics.phone)}</li>`);
+  if (basics.email) lines.push(`<li>${contactIcon("mail")}<a href="mailto:${escapeHtml(basics.email)}">${escapeHtml(basics.email)}</a></li>`);
 
   const location = [
     basics.location?.address,
@@ -312,9 +405,9 @@ function renderContactSection(basics = {}) {
     basics.location?.postalCode
   ].filter(Boolean).join(", ");
 
-  if (location) lines.push(`<li>📍︎ ${escapeHtml(location)}</li>`);
+  if (location) lines.push(`<li>${contactIcon("location")}${escapeHtml(location)}</li>`);
 
-  if (basics.url) lines.push(`<li>🌐︎ <a href="${escapeHtml(basics.url)}">${escapeHtml(basics.url)}</a></li>`);
+  if (basics.url) lines.push(`<li>${contactIcon("globe")}<a href="${escapeHtml(basics.url)}">${escapeHtml(basics.url)}</a></li>`);
 
   (basics.profiles || []).forEach((profile) => {
     if (!profile?.url) return;
@@ -353,20 +446,22 @@ function renderProfessionalExperience(work = []) {
     }
 
     return `
-      <article class="item">
-        <div class="item-head">
-          <div>
-            <h3 class="item-role">${escapeHtml(title)}</h3>
-            ${org}
+      <div class="work-item-keep">
+        <article class="item">
+          <div class="item-head">
+            <div>
+              <h3 class="item-role">${escapeHtml(title)}</h3>
+              ${org}
+            </div>
+            <div class="item-dates">${escapeHtml(dateRange(job.startDate, job.endDate))}</div>
           </div>
-          <div class="item-dates">${escapeHtml(dateRange(job.startDate, job.endDate))}</div>
-        </div>
-        ${details.join("")}
-      </article>
+          ${details.join("")}
+        </article>
+      </div>
     `;
   }).join("");
 
-  return section("Professional Experience", items);
+  return section("Professional Experience", items, "work-section");
 }
 
 function renderEducation(education = []) {
@@ -416,6 +511,7 @@ export function render(resume = {}) {
   const basics = resume.basics || {};
   const name = basics.name || "Resume";
   const label = basics.label ? `<p class="label">${escapeHtml(basics.label)}</p>` : "";
+  const footerText = [basics.name, basics.label].filter(Boolean).join(": ");
   const photo = basics.image
     ? `<img class="photo" src="${escapeHtml(basics.image)}" alt="${escapeHtml(name)} profile photo" />`
     : `<div class="photo-empty">Profile Photo</div>`;
@@ -441,7 +537,7 @@ export function render(resume = {}) {
   <style>${css}</style>
 </head>
 <body>
-  <main class="resume">
+  <main class="resume" role="main">
     <header class="header" role="banner">
       <div class="header-main">
         <h1 class="name">${escapeHtml(name)}</h1>
@@ -456,8 +552,19 @@ export function render(resume = {}) {
       <aside class="right-panel">${rightColumn}</aside>
     </div>
   </main>
+  ${footerText ? `<footer class="print-footer" role="contentinfo">${escapeHtml(footerText)}</footer>` : ""}
 </body>
 </html>`;
 }
 
-export default { render };
+export const pdfRenderOptions = {
+  mediaType: "print",
+  margin: {
+    top: "0.32in",
+    right: "0.32in",
+    bottom: "0.22in",
+    left: "0.32in"
+  }
+};
+
+export default { render, pdfRenderOptions };
